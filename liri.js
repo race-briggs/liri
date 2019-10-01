@@ -2,10 +2,10 @@
 require('dotenv').config();
 
 var keys = require('./keys.js');
-
+var Spotify = require("node-spotify-api");
 var axios = require('axios');
 var moment = require('moment');
-var spotify = require(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 
 
 function liriHelp(action){
@@ -17,7 +17,7 @@ function liriHelp(action){
     case 'spotify-this-song':
       var queryString = process.argv[3];
 
-      spotify.search({ type: 'artist OR album OR track', query: queryString, limit: 1}, function(err, data){
+      spotify.search({ type: 'track', query: queryString, limit: 1}, function(err, data){
         if(err){
           return console.log(err)
         }
