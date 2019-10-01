@@ -52,7 +52,18 @@ function liriHelp(action){
       })
       break;
     case 'concert-this':
-
+      var artist = process.argv[3];
+      axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function(response){
+        if(response.data[0] === undefined){
+          return console.log('Oops! No upcoming shows by that artist!');
+        } else {
+        var date = moment(response.data[0].datetime).format('MM/DD/YYYY');
+        console.log(response.data[0].lineup);
+        console.log(response.data[0].venue.name);
+        console.log(response.data[0].venue.city, response.data[0].venue.country);
+        console.log(date);
+        }
+      })
       break;
     case 'do-what-it-says':
 
