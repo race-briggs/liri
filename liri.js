@@ -12,12 +12,34 @@ function liriHelp(action){
   console.log('Hello silly human, LIRI is here to help you with your mundane mortal problems.')
   switch(action){
     case 'movie-this':
-
+      if(process.argv[3] === undefined){
+        axios.get("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=trilogy").then(function(response){
+          console.log(response.data.Title);
+          console.log("Released in " + response.data.Year);
+          console.log("IMDB Rating: " + response.data.Ratings[0].Value);
+          console.log("Rotten Timatoes Rating: " + response.data.Ratings[1].Value);
+          console.log("Produced in: " + response.data.Country);
+          console.log("Spoken in: " + response.data.Language);
+          console.log("Plot summary: " + response.data.Plot);
+          console.log("Starring: " + response.data.Actors);
+        })
+      } else{
+      axios.get("http://www.omdbapi.com/?t=" + process.argv[3] + "&y=&plot=short&apikey=trilogy").then(function(response){
+        console.log(response.data.Title);
+        console.log("Released in " + response.data.Year);
+        console.log("IMDB Rating: " + response.data.Ratings[0].Value);
+        console.log("Rotten Timatoes Rating: " + response.data.Ratings[1].Value);
+        console.log("Produced in: " + response.data.Country);
+        console.log("Spoken in: " + response.data.Language);
+        console.log("Plot summary: " + response.data.Plot);
+        console.log("Starring: " + response.data.Actors);
+      })
+      }
       break;
     case 'spotify-this-song':
       var queryString = process.argv[3];
 
-      spotify.search({ type: 'track', query: queryString || 'Ace of Base', limit: 1}, function(err, data){
+      spotify.search({ type: 'track', query: queryString || 'The Sign', limit: 1}, function(err, data){
         if(err){
           return console.log(err);
         }
