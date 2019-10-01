@@ -17,12 +17,16 @@ function liriHelp(action){
     case 'spotify-this-song':
       var queryString = process.argv[3];
 
-      spotify.search({ type: 'track', query: queryString, limit: 1}, function(err, data){
+      spotify.search({ type: 'track', query: queryString || 'Ace of Base', limit: 1}, function(err, data){
         if(err){
-          return console.log(err)
+          return console.log(err);
         }
 
-        console.log(JSON.stringify(data, null, 2));
+        console.log(data.tracks.items[0].artists[0].name);
+        console.log(data.tracks.items[0].name);
+        console.log(data.tracks.items[0].album.name);
+        console.log(data.tracks.items[0].preview_url);
+        
       })
       break;
     case 'concert-this':
