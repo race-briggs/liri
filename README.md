@@ -59,3 +59,7 @@ This command will have liri read the random.txt file and run the command stored 
 * node-spotify-api
 * OMDB api
 * Bandsintown api
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+All features of this app was developed my Race Briggs with the help of the various technologies and APIs listed above.
