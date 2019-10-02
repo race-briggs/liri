@@ -26,31 +26,26 @@ To use the app, simply follow these steps:
 ### concert-this
 
 ![concert-this example](/assets/screenshots/concert-this.png)
-Format: ![Alt Text](url)
 
 The concert-this command will have liri connect to the Bandisintown.com API in order to find an upcoming show by an artist of your choosing. The results displayed will contain the name of the band searched, the name of the venue, the location of the venue, and the date of the concert. If there are no upcoming shows, liri will notify you.
 
 ### spotify-this-song
 
-![spotify-this-song example](/assets/screenshots/spotify-this-song.png)
-Format: ![Alt Text](url)
+![spotify-this-song example](/assets/screenshots/spotify-this.png)
 
 This command will cause liri to connect with the Spotify API and search for information about the song requested. Liri will return information about the first search result, and provide the artist name, album title, song title, and a link to a preview of the song. If left blank, liri will return information about The Sign by Ace of Base.
 
 ### movie-this
 
 ![movie-this example](/assets/screenshots/movie-this.png)
-Format: ![Alt Text](url)
 
 ![movie-this example](/assets/screenshots/movie-this-search.png)
-Format: ![Alt Text](url)
 
 This command will send liri to connect to the OMDB API and search for information about the provided movie title. Liri will return the title of the movie, its release year, its IMDB rating, its Rotten Tomatoes rating, where it was produced, its language, a short plot summary, and the starring actors. If the query is blank, it will give information on Mr. Nobody.
 
 ### do-what-it-says
 
 ![do-what-it-says example](/assets/screenshots/do-what-it-says.png)
-Format: ![Alt Text](url)
 
 This command will have liri read the random.txt file and run the command stored inside. Change the command and the query to be whatever you like! Just be sure to separate the two with a comma and have the query in quotes. Play around with it!
 
