@@ -16,9 +16,9 @@ To use the app, simply follow these steps:
 
 1. In the command line, cd into the folder containing liri.
 1. Once in the folder, you can now issue one of the following commands directly in the command line:
-  1. node liri.js concert-this <artist name>
-  1. node liri.js spotify-this-song <song name>
-  1. node liri.js movie-this <movie title>
+  1. node liri.js concert-this "artist name"
+  1. node liri.js spotify-this-song "song name"
+  1. node liri.js movie-this "movie title"
   1. node liri.js do-what-it-says
 1. Make sure your spelling is correct, and if using spaces in a title, make sure your title or name you want to search is in quotes.
 1. Liri will then connect to an API according to your command and return a set of information.
@@ -62,4 +62,4 @@ This command will have liri read the random.txt file and run the command stored 
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-All features of this app was developed my Race Briggs with the help of the various technologies and APIs listed above.
+All features of this app were developed by Race Briggs with the help of the various technologies and APIs listed above.
