@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 var keys = require('./keys.js');
+var fs = require('fs');
 var Spotify = require("node-spotify-api");
 var axios = require('axios');
 var moment = require('moment');
@@ -66,10 +67,18 @@ function liriHelp(action){
       })
       break;
     case 'do-what-it-says':
-
+      fs.readFile('random.txt', 'utf8', function(err, data){
+        if(err){
+          return console.log(err);
+        }
+        var command = data.split(',');
+        process.argv[2] = command[0];
+        process.argv[3] = command[1];
+        console.log(process.argv)
+        liriHelp(process.argv[2]);
+      })
       break;
   }
-
 }
 
 liriHelp(process.argv[2]);
