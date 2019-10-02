@@ -40,7 +40,7 @@ function liriHelp(action){
     case 'spotify-this-song':
       var queryString = process.argv[3];
 
-      spotify.search({ type: 'track', query: queryString || 'The Sign', limit: 1}, function(err, data){
+      spotify.search({ type: 'track', query: queryString || 'I Saw The Sign', limit: 1}, function(err, data){
         if(err){
           return console.log(err);
         }
@@ -74,7 +74,6 @@ function liriHelp(action){
         var command = data.split(',');
         process.argv[2] = command[0];
         process.argv[3] = command[1];
-        console.log(process.argv)
         liriHelp(process.argv[2]);
       })
       break;
