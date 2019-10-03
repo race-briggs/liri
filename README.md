@@ -14,6 +14,7 @@ The app is organized into 4 different commands in a single js file (liri.js), al
 
 To use the app, simply follow these steps:
 
+1. In the command line, run npm install.
 1. In the command line, cd into the folder containing liri.
 1. Once in the folder, you can now issue one of the following commands directly in the command line:
   1. node liri.js concert-this "artist name"
