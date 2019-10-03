@@ -11,7 +11,7 @@ var spotify = new Spotify(keys.spotify);
 console.log('Hello silly human, LIRI is here to help you with your mundane mortal problems.')
 
 function liriHelp(action){
-  var searchValue = process.argv.slice(3).join(" ");
+  var searchValue = process.argv.slice(3).join(" ") || undefined;
   switch(action){
     case 'movie-this':
       if(searchValue === undefined){
