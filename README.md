@@ -20,7 +20,7 @@ To use the app, simply follow these steps:
   1. node liri.js spotify-this-song "song name"
   1. node liri.js movie-this "movie title"
   1. node liri.js do-what-it-says
-1. Make sure your spelling is correct, and if using spaces in a title, make sure your title or name you want to search is in quotes.
+1. Make sure your spelling is correct!
 1. Liri will then connect to an API according to your command and return a set of information.
   
 ### concert-this
@@ -47,7 +47,7 @@ This command will send liri to connect to the OMDB API and search for informatio
 
 ![do-what-it-says example](/assets/screenshots/do-what-it-says.png)
 
-This command will have liri read the random.txt file and run the command stored inside. Change the command and the query to be whatever you like! Just be sure to separate the two with a comma and have the query in quotes. Play around with it!
+This command will have liri read the random.txt file and run the command stored inside. Change the command and the query to be whatever you like! Just be sure to separate the two with a comma. Play around with it!
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 

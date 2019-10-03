@@ -8,12 +8,13 @@ var axios = require('axios');
 var moment = require('moment');
 var spotify = new Spotify(keys.spotify);
 
+console.log('Hello silly human, LIRI is here to help you with your mundane mortal problems.')
 
 function liriHelp(action){
-  console.log('Hello silly human, LIRI is here to help you with your mundane mortal problems.')
+  var searchValue = process.argv.slice(3).join(" ");
   switch(action){
     case 'movie-this':
-      if(process.argv[3] === undefined){
+      if(searchValue === undefined){
         axios.get("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=trilogy").then(function(response){
           console.log(response.data.Title);
           console.log("Released in " + response.data.Year);
@@ -25,7 +26,7 @@ function liriHelp(action){
           console.log("Starring: " + response.data.Actors);
         })
       } else{
-      axios.get("http://www.omdbapi.com/?t=" + process.argv[3] + "&y=&plot=short&apikey=trilogy").then(function(response){
+      axios.get("http://www.omdbapi.com/?t=" + searchValue + "&y=&plot=short&apikey=trilogy").then(function(response){
         console.log(response.data.Title);
         console.log("Released in " + response.data.Year);
         console.log("IMDB Rating: " + response.data.Ratings[0].Value);
@@ -38,23 +39,18 @@ function liriHelp(action){
       }
       break;
     case 'spotify-this-song':
-      var queryString = process.argv[3];
-
-      spotify.search({ type: 'track', query: queryString || 'I Saw The Sign', limit: 1}, function(err, data){
+      spotify.search({ type: 'track', query: searchValue || 'The Sign', limit: 1}, function(err, data){
         if(err){
           return console.log(err);
         }
-
         console.log(data.tracks.items[0].artists[0].name);
         console.log(data.tracks.items[0].name);
         console.log(data.tracks.items[0].album.name);
         console.log(data.tracks.items[0].preview_url);
-        
       })
       break;
     case 'concert-this':
-      var artist = process.argv[3];
-      axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function(response){
+      axios.get("https://rest.bandsintown.com/artists/" + searchValue + "/events?app_id=codingbootcamp").then(function(response){
         if(response.data[0] === undefined){
           return console.log('Oops! No upcoming shows by that artist!');
         } else {
